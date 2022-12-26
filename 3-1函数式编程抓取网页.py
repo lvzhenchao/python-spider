@@ -16,8 +16,8 @@ def request_url(url, filename):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0) Gecko/20100101 Firefox/6.0'}
 
     ## 请求对象 + 响应对象 + 提取内容
-    req = request.Request(url=url,headers=headers)
-    res = request.urlopen(req)
+    req  = request.Request(url=url,headers=headers)
+    res  = request.urlopen(req)
     html = res.read().decode('utf-8')
     # 保存文件至本地
     # 使用 with as 操作已经打开的文件对象（本身就是上下文管理器），无论期间是否抛出异常，都能保证 with as 语句执行完毕后自动关闭已经打开的文件
