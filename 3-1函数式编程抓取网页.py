@@ -29,6 +29,6 @@ def request_url(url, filename):
 # 主程序入口
 if __name__ == "__main__":
     word = input("请输入搜索内容：")
-    url = get_url(word)
+    url  = get_url(word)
     filename = word + '.html'
     request_url(url, filename)
