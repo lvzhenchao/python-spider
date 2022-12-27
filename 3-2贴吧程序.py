@@ -28,7 +28,7 @@ class TiebaSpider(object):
         with open(filename, 'w') as f:
             f.write(html)
 
-# 4.入口函数
+    # 4.入口函数
     def run(self):
         name  = input('输入贴吧名：')
         begin = int(input('输入起始页：'))
