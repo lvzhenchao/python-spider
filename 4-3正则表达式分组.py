@@ -1,3 +1,4 @@
+import re
 
 # 正则表达式：能够将子表达式做成子集，使用（）进行分组，方便对字符串进行划分
 
@@ -20,3 +21,39 @@
 # 1	        (A)
 # 2	        (B(C))
 # 3	        (C)
+
+## 补充
+### 如果想匹配3个数字：\d{3}
+### 重复多个字符：(ab){3},3次ab
+
+# 正则表达式分组示例 : 正则表达式分组可以从匹配的信息中提取出想要的信息
+website="编程帮 www.biancheng.net"
+
+# 提取所有信息， 转义"."
+pattern_1 = re.compile('\w+\s+\w+\.\w+\.\w+')
+print(pattern_1.findall(website))
+
+# 提取匹配信息的第一项
+pattern_2 = re.compile('(\w+)\s+\w+\.\w+\.\w+')
+print(pattern_2.findall(website))
+
+#有两个及以上的()则以元组形式显示
+pattern_3=re.compile('(\w+)\s+(\w+\.\w+\.\w+)')
+print(pattern_3.findall(website))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
