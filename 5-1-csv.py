@@ -24,7 +24,7 @@ with open('aggs.csv', 'w', newline='') as f:
 
 # 2> csv.DictWriter() 类似字典的形式读写数据
 with open('names.csv', 'w', newline='') as csvfile:
-    #构建字段名称，也就是key
+    #构建字段名称，也就是key，表头
     fieldnames = ['first_name', 'last_name']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     # 写入字段名，当做表头
