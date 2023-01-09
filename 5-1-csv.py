@@ -16,6 +16,7 @@ with open('eggs.csv', 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=' ',quotechar='|')
     spamwriter.writerow(['www.biancheng.net'] * 5 + ['how are you'])
     spamwriter.writerow(['hello world', 'web site', 'www.biancheng.net'])
+    
 # 多行写入
 with open('aggs.csv', 'w', newline='') as f:
     writer = csv.writer(f)
