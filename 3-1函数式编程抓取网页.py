@@ -5,7 +5,7 @@ from urllib import parse
 # 拼接url地址
 def get_url(word):
     url = 'http://www.baidu.com/s?{}'
-    # 此处使用urlencode()进行编码
+    # 此处使用urlencode()进行编码，可对字典类型编码
     params = parse.urlencode({'wd': word})
     # 格式化
     url = url.format(params)
