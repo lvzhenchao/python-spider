@@ -39,3 +39,37 @@ params3 ='wd=' + urllib.parse.quote(word)
 url3    = 'http://www.baidu.com/s?{}'
 url3 = url3.format(params3)
 print(url3)
+
+# 安全字符：指的是没有特殊用途或者特殊意义的字符
+# url之所以需要编码，是因为URL中的某些字符会引起歧义
+# 例如：url查询参数中包含了“&”或者“%”就会造成服务器解析错误
+# 再例如：URL的编码采用的是ASCll码而非Unicode格式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
