@@ -39,6 +39,11 @@ pattern2 = re.compile('<div><p>.*?</p></div>',re.S)
 re_list2 = pattern2.findall(html)
 print(re_list2)
 
+# 2-1 非贪婪模式匹配 re.findall()
+re_list3 = re.findall('<div><p>.*?</p></div>', html, re.S)
+print(re_list3)
+
+
 # 输出结果：非贪婪模式更适合提取html信息
 ['<div><p>www.biancheng.net</p></div>\n<div><p>编程帮</p></div>']
 ['<div><p>www.biancheng.net</p></div>', '<div><p>编程帮</p></div>']
