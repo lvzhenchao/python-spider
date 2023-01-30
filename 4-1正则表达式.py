@@ -1,5 +1,6 @@
 # python编写爬虫的过程，re模块通常作为一种解析方法来使用。通过审查网页元素来获取网页的大体结构，然后使用解析模块来提取想要的网页信息
 # https://tool.chinaz.com/regex
+import re
 
 # 基本元素
 
@@ -54,13 +55,21 @@
 ## 常见的特殊字符如下： * + ? ^ $ [] () {} | \
 
 
+s = 'he111Lowor1d'
+s1 = re.findall(r'(\d+)', 'a' + s + '0')
+print(s1)
+#['111', '1', '0']
+
+
+ss = 'he11owor1d'
+s2 = re.findall(r'(\D+)(\d+)', 'a' + ss + '0') # \D+匹配多个非数字，\d+匹配多个数字
+print(s2)
 
 
 
 
 
-
-
+# https://blog.csdn.net/weixin_46713695/article/details/125343550
 
 
 
