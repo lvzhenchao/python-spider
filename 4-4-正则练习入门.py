@@ -19,3 +19,9 @@ s2 = """
 """
 
 print(re.findall('[Pp]ython', s2))
+
+# 3、匹配多个单词 Ruby、Rube、ruby、rube
+s3 = """
+Ruby、Rube、ruby、rube
+"""
+print(re.findall('[Rr]ub[ey]', s3))
