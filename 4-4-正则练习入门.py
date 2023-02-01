@@ -112,7 +112,7 @@ s7_1 = """
     pythonregext
 
 """
-print(re.findall('.[(\S)*,^(a-z)].+', s7_1))
+print(re.findall('[(\S)*,^(a-z)].+', s7_1))
 
 
 
