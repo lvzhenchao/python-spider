@@ -114,6 +114,32 @@ s7_1 = """
 """
 print(re.findall('[(\S)*,^(a-z)].+', s7_1))
 
+# 8、快捷匹配数字和字母
+s8 = """
+    master
+    code
+    jiaonang
+    123456789
+    987654321
+    0123
+    CODE
+    JIAONANG
+    hello world
+    python
+    
+    //\
+    =-
+    /*-
+    `
+    !!!
+    $#$%
+    /*-+
+    <>()
+    {}
+    ||
+"""
+print(re.findall('[\w].+', s8))
+
 
 
 
