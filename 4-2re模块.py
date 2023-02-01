@@ -14,6 +14,7 @@ import re
 ## 5、re.sub(pattern,replace,string,max,flags = 0) 使用一个字符串替换正则表达式匹配到的内容。返回值是替换后的字符串
 
 ## 6、re.search(pattern,string,flags=0) 匹配目标字符串第一个符合的内容，返回值为匹配的对象
+### title = re.search(r'<span property="v:itemreviewed">(.*?)</span>',page,re.S)
 
 # flags功能标志位
 # 缩写元字符	   说明
