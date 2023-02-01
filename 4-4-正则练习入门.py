@@ -158,6 +158,20 @@ s9 = """
 print(re.findall('code\s[\w]*', s9))
 
 # 10、单词边界
+s10 = """
+    code
+    code jiaonang
+    code.jiaonang
+    www.code
+    code-jiaonang
+    
+    CODEINFO
+    codeasd/
+    codejiaonangA$
+    JIAONANG-MASTER
+    CODEJIAONANG!
+"""
+print(re.findall('.*\bcode\b.*', s10))
 
 
 
