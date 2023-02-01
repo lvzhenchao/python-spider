@@ -54,6 +54,12 @@ import re
 # 转义：匹配特殊字符时，则需要在字符前加\表示转意
 ## 常见的特殊字符如下： * + ? ^ $ [] () {} | \
 
+# \b单词边界补充：下划线，数字和字母相邻是匹配不到单词边界\b的; 汉字和字母之间是可以看做存在单词边界的
+## a,b; a和b之间是有边界的
+## ab;  a和b之间是没有边界的
+## a是b; a和b之间是有边界的,
+## http://www.manongjc.com/detail/18-plnlggnrbqpuwla.html
+
 
 s = 'he111Lowor1d'
 s1 = re.findall(r'(\d+)', 'a' + s + '0')
