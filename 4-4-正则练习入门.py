@@ -140,10 +140,24 @@ s8 = """
 """
 print(re.findall('[\w].+', s8))
 
+# 9、匹配空白分隔的单词
+s9 = """
+    code
+    code jiaonang
+    code jiaonang
+    code www
+    code jiaonang
+    
+    CODEINFO
+    codeasd/
+    codejiaonangA$
+    JIAONANG-MASTER
+    CO DEJIAONANG! 
 
+"""
+print(re.findall('code\s[\w]*', s9))
 
-
-
+# 10、单词边界
 
 
 
