@@ -173,6 +173,56 @@ s10 = """
 """
 print(re.findall('.*\bcode\b.*', s10))
 
+# 11、快捷方式取反
+s11 = """
+    ￥master
+    $codejiaonang
+    ()helloworld
+    +python
+    -java
+    *ruby
+    
+    master
+    code
+    python
+    java
+    ruby
+    regex 
+    
+"""
+print(re.findall('\W.*', s11))
+
+# 12、开始和结束
+s12 = """
+    windows OS
+    Mac OS
+    LinuxOS
+    AppleOS
+    
+    OSopen
+    apple os
+    windows os
+    OSx
+"""
+print(re.findall('(OS)', s12))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
