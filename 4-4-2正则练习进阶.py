@@ -59,6 +59,11 @@ s3 = """
 # .rmvb
 print(re.findall('(.avi|.mp4|.wmv|.rmvb)', s3))
 
+#4、非捕获分组
+## https://www.cnblogs.com/piperck/p/15878834.html
+## 有时候，并不需要捕获某个分组的内容，但是又想使用分组的特性；
+## 可以使用非捕获组(?:表达式)，从而不捕获数据，还能使用分组的功能
+
 
 
 
