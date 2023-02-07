@@ -94,6 +94,33 @@ s4_1 = """
 # 211 867 3676
 print(re.findall('\(?(\d{3})\)?[-.]?(\d{3})[.-]?(\d{4})', s4_1))
 
+# 分组回溯引用：引用之前匹配分组的机制，子匹配，该匹配接下来会再次出现；使用\N可以引用编号为N的分组
+#5、回溯引用：匹配单词(匹配符合 ab ba 这种关系)
+s_5 = """
+    需要匹配的
+    abccba
+    allagmatic
+    otto
+    abba
+    asffs
+    maam
+    warrandice
+"""
+print(re.findall('.*(\w)(\w)\2\1.*', s_5))## 没出来
+
+#5-1、回溯引用实践
+s_5_1 = """
+    需要匹配的
+    mama
+    baba
+    froufrou
+    barbar
+    haha
+    hehe
+    ohhohh
+"""
+print(re.findall('(\w).*(\w).*\1\2.*', s_5_1))
+
 
 
 
