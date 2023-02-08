@@ -123,6 +123,45 @@ print(re.findall('(\w).*(\w).*\1\2.*', s_5_1))
 
 # 6 先行断言：环视，也叫预搜索
 
+# 6-1 正向先行断言：(?=表达式)指在某个位置向右看，所在位置右侧必须匹配【表达式】；密码强度验证：至少一个大写字母、至少一个小写字母、至少一个数字、至少8个字符
+s_6 = """
+需要匹配的
+Admin123456
+pZUJLUpTL2
+Tnut2eWPN1
+wJxpVhVYi3
+UySRo49ps
+Ig7AHzZ0J
+oYHMDdHCK9
+yiyWKQnWo2
+gTZEEkVrj1
+8Ij12340as
+wdfqe#wefDdf444
+Codejiaonang123
+CodeJiaonang@qq1
+111111abc11ABc
+CodeJiaonang123
+不能匹配的
+qwe
+8848
+123456
+asd123
+Adm123
+Asd123
+wjleif932
+admin123
+123admin
+123asd123
+ADMIN123()
+编号89757
+888888888info
+masterxiao123
+888888888A
+"""
+print(re.findall('(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d).{8,}', s_6))
+
+# 6-2 反向先行断言：(?!表达式)的作用是保证右边不能出现某字符
+
 
 
 
