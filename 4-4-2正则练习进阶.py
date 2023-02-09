@@ -141,6 +141,7 @@ Codejiaonang123
 CodeJiaonang@qq1
 111111abc11ABc
 CodeJiaonang123
+
 不能匹配的
 qwe
 8848
@@ -161,7 +162,20 @@ masterxiao123
 print(re.findall('(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d).{8,}', s_6))
 
 # 6-2 反向先行断言：(?!表达式)的作用是保证右边不能出现某字符
+s_6_2 = """
+需要匹配的
+abc@sina.com
+qq@163.com
+a@google.com
+qq@123.com
 
+不能匹配的
+test@qq.com
+qq@qq.com
+gc@qq.com
+163@qq.com
+"""
+print(re.findall('.*@(?!qq)\w*\.com', s_6_2))
 
 
 
