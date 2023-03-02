@@ -47,6 +47,10 @@ class TiebaSpider(object):
             html = self.get_html(url)
             #定义路径
             filename = '{}-{}页.html'.format(name,page)
+            # Python2.6 开始，新增了一种格式化字符串的函数 str.format()，它增强了字符串格式化的功能。
+            # 基本语法是通过 {} 和 : 来代替以前的 %
+            # format 函数可以接受不限个参数，位置可以不按顺序
+
             self.save_html(filename,html)
             #提示
             print('第%d页抓取成功'%page)
