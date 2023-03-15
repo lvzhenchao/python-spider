@@ -23,3 +23,10 @@ class MaoyanSpider(object):
         html = res.read().decode()
         # 直接调用解析函数
         self.parse_html(html)
+
+    # 解析函数
+    def parse_html(self, html):
+        # 正则表达式
+        # 【编写正则表达式时将需要提取的信息使用(.*?)代替，而不需要的内容（包括元素标签）使用.*?代替。】
+        re_bds = '<div class="movie-item-info">.*?title="(.*?)".*?<p class="star">(.*?)</p>.*?class="releasetime">(.*?)</p>'
+        # 生成正则表达式
