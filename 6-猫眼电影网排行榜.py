@@ -25,8 +25,70 @@ class MaoyanSpider(object):
         self.parse_html(html)
 
     # 解析函数
-    def parse_html(self, html):
+    def parse_html(self,html):
         # 正则表达式
-        # 【编写正则表达式时将需要提取的信息使用(.*?)代替，而不需要的内容（包括元素标签）使用.*?代替。】
-        re_bds = '<div class="movie-item-info">.*?title="(.*?)".*?<p class="star">(.*?)</p>.*?class="releasetime">(.*?)</p>'
-        # 生成正则表达式
+        # re_bds = '<div class="movie-item-info">.*?title="(.*?)".*?<p class="star">(.*?)</p>.*?class="releasetime">(.*?)</p>'
+        re_bds = '<div.*?<a title="(.*?)".*?star">(.*?)</p.*?div>'
+        # 生成正则表达式对象
+        pattern = re.compile(re_bds, re.S)
+        # r_list: [('我不是药神','徐峥,周一围,王传君','2018-07-05'),...] 列表元组
+        r_list = pattern.findall(html)
+        self.save_html(r_list)
+
+    # 保存数据函数，使用python内置csv模块
+    def save_html(self, r_list):
+        # 生成文件对象
+        with open("maoyan.csv", 'a', newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            #生成csv操作对象
+            for r in r_list:
+                name = r[0].strip()
+                star = r[1].strip()[3:]
+                time = r[2].strip()[5:15]
+                L = [name, star, time]
+                writer.writerow(L)
+                print(name, time, star)
+
+    # 主函数
+    def run(self):
+        for offset in range(0, 11, 10):
+            url = self.url.format(offset)
+            self.get_html(url)
+            # 生成1-2之间的浮点数
+            time.sleep(random.uniform(1, 2))
+
+# 以脚本方式启动
+if __name__ == '__main__':
+    #捕捉异常错误
+    try:
+        spider = MaoyanSpider()
+        spider.run()
+    except Exception as e:
+        print("错误:",e)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
