@@ -19,7 +19,7 @@ html_str = '''
 '''
 parse_html = etree.HTML(html_str)#html()方法会转换为符合规范的HTML文档格式
 # tostring()将标签元素转换为字符串输出，注意：result为字节类型
-result = etree.tostring(parse_html)
+# result = etree.tostring(parse_html)
 # print(result.decode('utf-8'))
 
 #3、 调用xpath表达式
