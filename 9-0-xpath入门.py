@@ -26,3 +26,6 @@
 # node()	 匹配任意类型的节点
 
 ##3-3多路径匹配：xpath表达式1 | xpath表达式2 | xpath表达式3
+### //ul/li[@class="book2"]/p[@class="price"] | //ul/li/@href
+
+#4、常用的内建函数
