@@ -14,7 +14,7 @@ html_str = '''
          <li class="site1"><a href="c.biancheng.net">C语言中文网</a>
          <li class="site2"><a href="www.baidu.com">百度</a></li>
          <li class="site3"><a href="www.jd.com">京东</a></li>
-     </ul>
+    </ul>
 </div>
 '''
 parse_html = etree.HTML(html_str)#html()方法会转换为符合规范的HTML文档格式
