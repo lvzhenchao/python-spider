@@ -49,7 +49,7 @@ data = {'from': 'zh',
         'query': '编程帮www.biancheng.net你好'
         }
 response = requests.post(url, data=data)
-# print(response)
+print(response)
 
 response1 = requests.get('http://www.baidu.com')
 print(response1.encoding)
