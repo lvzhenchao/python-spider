@@ -20,7 +20,7 @@ data1 = {
     'query': '编程帮www.biancheng.net你好'
 }
 response = requests.post(url, data=data)
-print(response)
+# print(response)
 # print(response.encoding)
 # response.encoding="utf-8"    #更改为utf-8编码
 # print(response.status_code)  # 打印状态码
@@ -36,5 +36,27 @@ headers = {'User-Agent':'Mozilla/4.0'}
 #读取图片需要使用content属性
 html = requests.get(url=url,headers=headers).content
 #以二进制的方式下载图片
-with open('C:/Users/13701/Pictures/python_logo.jpg','wb') as f:
-    f.write(html)
+# with open('C:/Users/13701/Pictures/python_logo.jpg','wb') as f:
+    # f.write(html)
+
+# 3、HttpResponse响应对象
+#百度翻译
+url = 'https://fanyi.baidu.com'
+#post请求体携带的参数，可通过开发者调试工具查看
+#查看步骤：NetWork选项->Headers选项->Form Data
+data = {'from': 'zh',
+        'to': 'en',
+        'query': '编程帮www.biancheng.net你好'
+        }
+response = requests.post(url, data=data)
+# print(response)
+
+response1 = requests.get('http://www.baidu.com')
+print(response1.encoding)
+response1.encoding="utf-8"    #更改为utf-8编码
+print(response1.status_code)  # 打印状态码
+# print(response1.url)          # 打印请求url
+print(response1.headers)      # 打印头信息
+# print(response1.cookies)      # 打印cookie信息
+# print(response1.text)  #以字符串形式打印网页源码
+# print(response1.content) #以字节流形式打印
