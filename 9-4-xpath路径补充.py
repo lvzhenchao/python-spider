@@ -90,7 +90,7 @@ print(html2_div1)
 div_list = html2_parse.xpath("//div")
 print(div_list)
 for dd in div_list:
-    print(dd.xpath(".//p/text()"))
+    print(dd.xpath(".//p/text()")) #we.findElement(By.xpath(".//p")，表示当前WebElement下的p标签。
 
 
 
