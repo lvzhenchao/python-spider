@@ -36,9 +36,15 @@ import random
 
 # 1、确定信息元素结构:
 ## 所采集的信息【电影名称、主演演员、上映时间】都包含在<dd>标签中，而<dd>标签又包含在<dl>标签中，dl是父辈节点
+
 # 2、基准表达式：针对每一个dd提取信息，比较繁琐；
 ## 将10个<dd>节点放入一个列表，使用for循环遍历每一个节点对象：匹配10个<dd>节点的Xpath表达式称为【基准表达式】
 ## xpath_bds='//dl[@class="board-wrapper"]/dd'
+
+# 3、提取数据表达式，提取<dd>节点中的信息：【.//】 表示dd节点的所有子节点后代节点
+## 提取电影名信息：   xpath('.//p[@class="name"]/a/text()')
+## 提取主演信息：     xpath('.//p[@class="star"]/text()')
+## 提取上映时间信息： xpath('.//p[@class="releasetime"]/text()')
 
 
 class MaoyanSpider(object):
@@ -47,12 +53,13 @@ class MaoyanSpider(object):
         self.headers={'User-Agent':random.choice(ua_list)}
     def save_html(self):
         html=requests.get(url=self.url,headers=self.headers).text
-        #jiexi
+        # 解析
         parse_html=etree.HTML(html)
         # 基准 xpath 表达式，匹配10个<dd>节点对象
         dd_list=parse_html.xpath('//dl[@class="board-wrapper"]/dd') #列表放10个dd
         print(dd_list)
-        # .// 表示dd节点的所有子节点后代节点
+
+        # .// 表示dd节点的所有子节点、后代节点
         # 构建item空字典将提取的数据放入其中
         item={}
         for dd in dd_list:
