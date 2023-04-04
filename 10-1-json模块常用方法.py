@@ -25,7 +25,7 @@ print("python字典数据格式：%s；数据类型：%s"% (py_dict,type(py_dict
 ## indent：格式化存储数据，使 JSON 字符串更易阅读。
 ## ensure_ascii：是否使用 ascii 编码，当数据中出现中文的时候，需要将其设置为 False。
 ditc_info = {"name" : "c语言中文网","PV" : "50万","UV" : "20万","create_time" : "2010年"}
-with open("web.json", "a") as f:
+with open("web.json", "w") as f:
     json.dump(ditc_info, f, ensure_ascii=False)
 
 
@@ -39,10 +39,8 @@ with open('info_web.json', 'a') as f:
 
 # 3、json.load();
 site = {'name':'c语言中文网',"url":"c.biancheng.net"}
-filename = 'website.json'
-with open (filename,'w') as f:
-    json.dump(site,f,ensure_ascii=False)
-with open (filename,'r') as f:
+filename = 'web.json'
+with open (filename, 'r') as f:
     print(json.load(f))
 
 
