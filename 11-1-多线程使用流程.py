@@ -12,19 +12,22 @@
 # 线程的具体使用方法
 from threading import Thread
 
+def demo(num):
+    print(num, "test function")
+
 ## 1、 线程创建、启动、回收
-# t = Thread(target=函数名) # 创建线程对象
-# t.start() # 创建并启动线程
-# t.join()  # 阻塞等待回收线程
+t = Thread(demo(100)) # 创建线程对象
+t.start() # 创建并启动线程
+t.join()  # 阻塞等待回收线程
 
 ## 2、 创建多线程的具体流程
-# t_list = []
-# for i in range(5):
-#     t = Thread(target=函数名)
-#     t_list.append(t)
-#     t.start()
-# for t in t_list:
-#     t.join()
+t_list = []
+for i in range(5):
+    t = Thread(demo(i))
+    t_list.append(t)
+    t.start()
+for t in t_list:
+    t.join()
 
 ## 3、线程同步问题：即多个线程不能操作同一个数据，会造成数据的不确定性；通过threading 模块的 Lock 对象能够保证数据的正确性
 # lock = Lock()
