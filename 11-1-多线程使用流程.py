@@ -46,11 +46,12 @@ from threading import Lock
 ## 等待的线程去获取解释器来执行程序；这主要是通过线程的调度机制实现的；
 ## 我们需要构建一个【多线程共享数据】的模型，让所有线程都到该模型中获取数据。
 ## queue（队列，先进先出）模块提供了创建共享数据的队列模型
-## 比如：把所有待爬取的URL地址放入对垒中，每个线程都到这个队列中去提取URL
+## 比如：把所有【待爬取的URL】地址放入队列中，每个线程都到这个队列中去提取URL
 from queue import Queue
 q = Queue() #创建队列对象
 url = 'www.baidu.com'
 q.put(url)  #向队列中添加爬取一个url链接
 q.get()     #获取一个url, 当队列为空时，则塞
 q.empty()   #判断队列是否为空，Ture/False
+print(type(q))
 
