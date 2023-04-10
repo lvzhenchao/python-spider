@@ -31,7 +31,10 @@ for i in range(5):
 for t in t_list:
     t.join()
 
+
+
 ## 3、线程同步问题：即多个线程不能操作同一个数据，会造成数据的不确定性；通过threading 模块的 Lock 对象能够保证数据的正确性
+from threading import Lock
 # lock = Lock()
 # # 获取锁
 # lock.acquire()
