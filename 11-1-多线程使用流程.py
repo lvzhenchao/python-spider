@@ -22,12 +22,10 @@ t.join()  # 阻塞等待回收线程
 
 ## 2、 创建多线程的具体流程
 t_list = []
-
 for i in range(5):
     t = Thread(demo(i))
     t_list.append(t)
     t.start()
-
 for t in t_list:
     t.join()
 
