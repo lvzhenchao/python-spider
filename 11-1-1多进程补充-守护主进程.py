@@ -12,9 +12,9 @@ def task():
 
 if __name__ == '__main__':
     sub_process = multiprocessing.Process(target=task)
-    sub_process.daemon = True
-    sub_process.start()
     # sub_process.terminate()
+    sub_process.daemon = True
+    # sub_process.start()
     print('主进程结束')
     exit()
 
