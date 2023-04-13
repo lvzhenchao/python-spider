@@ -9,6 +9,8 @@
 ###- threading.enumerate() 返回一个所有正在运行的线程的列表
 ###- threading.activeCount() 返回正在运行的线程数量
 
+# 进程参考：https://blog.csdn.net/qq_39147299/article/details/107831452
+
 # 线程的具体使用方法
 from threading import Thread
 
