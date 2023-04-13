@@ -9,18 +9,33 @@
 ## 计算密集型：使用多进程更好
 ## io密集型：使用多线程更好
 
+## 进程的常用方法
+# start()：启动子进程实例（创建子进程）
+# join()：主进程会等待子进程执行结束再继续执行（阻塞等待）
+# terminate()：不管任务是否完成，立即终止子进程
+
+# 获取当前进程的对象
+# p = multiprocessing.current_process()
+# print(p.name)
+# 结束进程
+# os.kill(os.getpid(), 9)
+
 import multiprocessing
 import os
 import time
 
 def run():
     print("run 当前进程:{}，父进程:{}".format(os.getpid(), os.getppid()))
+    p = multiprocessing.current_process()
+    print(p.name)
     for i in range(0, 5):
         print('正在跑第{}次', format(i))
         time.sleep(0.2)
 
 def eat():
     print("eat 当前进程:{}，父进程:{}".format(os.getpid(), os.getppid()))
+    p = multiprocessing.current_process()
+    print(p.name)
     for i in range(0, 5):
         print('吃饭啦---{}次', format(i))
         time.sleep(0.2)
@@ -28,6 +43,9 @@ def eat():
 if __name__ == '__main__':
     print('主进程：' + str(os.getpid()))
     run_process = multiprocessing.Process(target=run)
+    p = multiprocessing.current_process()
+    print(p.name)
+    
     eat_process = multiprocessing.Process(target=eat)
     run_process.start()
     eat_process.start()
