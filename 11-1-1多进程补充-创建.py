@@ -45,7 +45,7 @@ if __name__ == '__main__':
     run_process = multiprocessing.Process(target=run)
     p = multiprocessing.current_process()
     print(p.name)
-    
+
     eat_process = multiprocessing.Process(target=eat)
     run_process.start()
     eat_process.start()
