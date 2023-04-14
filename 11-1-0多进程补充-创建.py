@@ -43,11 +43,13 @@ def eat():
         time.sleep(0.2)
 
 if __name__ == '__main__':
-    print('主进程：' + str(os.getpid()))
     run_process = multiprocessing.Process(target=run)
+    eat_process = multiprocessing.Process(target=eat)
+    run_process.start()
+    eat_process.start()
+
+    print('主进程：' + str(os.getpid()))
     p = multiprocessing.current_process()
     print(p.name)
     print('')
-    eat_process = multiprocessing.Process(target=eat)
-    run_process.start() #（阻塞等待）
-    eat_process.start() #（阻塞等待）
+
