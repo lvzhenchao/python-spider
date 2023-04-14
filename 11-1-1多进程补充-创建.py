@@ -29,7 +29,7 @@ def run():
     p = multiprocessing.current_process()
     print(p.name)
     for i in range(0, 5):
-        print('正在跑第{}次', format(i))
+        print('正在跑第{}次'.format(i))
         time.sleep(0.2)
 
 def eat():
@@ -37,7 +37,7 @@ def eat():
     p = multiprocessing.current_process()
     print(p.name)
     for i in range(0, 5):
-        print('吃饭啦---{}次', format(i))
+        print('吃饭啦---{}次'.format(i))
         time.sleep(0.2)
 
 if __name__ == '__main__':
