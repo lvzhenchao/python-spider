@@ -38,8 +38,10 @@ def func(index):
 #         p = Process(target=func, args=(i,))
 #         p.start()
 #         p.join()
+
 #     print("2:主进程10封邮件已发送完毕")
 #     print('')
+
 #     end = time.time()
 #     #查看程序执行时间
 #     print('执行时间:%.2f' % (end - start))
@@ -67,8 +69,10 @@ if __name__ == '__main__':
         p_list.append(p) # 把启动的进程全部添加进去
     for p in p_list:
         p.join() #添加阻塞
+
     print("3: 主进程10封邮件已发送完毕")
     print('')
+
     end = time.time()
     # 查看程序执行时间
     print('执行时间:%.2f' % (end - start))
