@@ -49,5 +49,5 @@ if __name__ == '__main__':
     print(p.name)
     print('')
     eat_process = multiprocessing.Process(target=eat)
-    run_process.start()
-    eat_process.start()
+    run_process.start() #（阻塞等待）
+    eat_process.start() #（阻塞等待）
