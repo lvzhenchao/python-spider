@@ -97,18 +97,18 @@ def func(index):
 
 ## 守护进程：是一类在后台运行的特殊进程，是一个在后台运行并且不受任何终端控制的进程；用于执行特定的系统任务
 ## 很多守护进程在系统引导的时候启动，并且一直运行直到系统关闭。另一些只在需要的时候才启动，完成任务后就自动结束。守护进程最重要的特性是后台运行。
-# def func0():
-#     print('子进程 start')
-#     time.sleep(3)
-#     print('子进程 end')
-#
-# if __name__ == '__main__':
-#     p = Process(target=func0)
-#     # 设置守护进程必须在start()方法之前
-#     p.daemon = True #启动守护进程
-#     p.start()
-#     time.sleep(2)
-#     print('主进程')
+def func0():
+    print('子进程 start')
+    time.sleep(3)
+    print('子进程 end')
+
+if __name__ == '__main__':
+    p = Process(target=func0)
+    # 设置守护进程必须在start()方法之前
+    p.daemon = True #启动守护进程
+    p.start()
+    time.sleep(2)
+    print('主进程')
 # 子进程 start
 # 主进程
 # 没有打印：子进程 end
