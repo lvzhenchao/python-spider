@@ -47,8 +47,11 @@ def eat():
         time.sleep(0.2)
 
 if __name__ == '__main__':
+    # 1、创建进程
     run_process = multiprocessing.Process(target=run)
     eat_process = multiprocessing.Process(target=eat)
+    
+    # 2、开启进程
     run_process.start()
     eat_process.start()
 
