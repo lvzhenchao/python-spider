@@ -20,10 +20,18 @@ def get_data(q):
         print('Get %s from queue.' % value)
 
 if __name__ == '__main__':
+    start = time.time()
+
     queue = Queue()
     p_put = Process(target=put_data, args=(queue,))
     p_get = Process(target=get_data, args=(queue,))
+
     p_put.start()
     p_get.start()
+
     p_put.join()
     p_get.terminate()
+
+    end = time.time()
+    # 查看程序执行时间
+    print('执行时间:%.2f' % (end - start))
