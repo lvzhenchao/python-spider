@@ -40,7 +40,7 @@ def eat():
 
     p = multiprocessing.current_process()
     print(p.name)
-    
+
     print('')
     for i in range(0, 5):
         print('吃饭啦---{}次'.format(i))
