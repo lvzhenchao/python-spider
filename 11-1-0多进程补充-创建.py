@@ -26,8 +26,10 @@ import time
 
 def run():
     print("run 当前进程:{}，父进程:{}".format(os.getpid(), os.getppid()))
+
     p = multiprocessing.current_process()
     print(p.name)
+
     print('')
     for i in range(0, 5):
         print('正在跑第{}次'.format(i))
@@ -35,8 +37,10 @@ def run():
 
 def eat():
     print("eat 当前进程:{}，父进程:{}".format(os.getpid(), os.getppid()))
+
     p = multiprocessing.current_process()
     print(p.name)
+    
     print('')
     for i in range(0, 5):
         print('吃饭啦---{}次'.format(i))
