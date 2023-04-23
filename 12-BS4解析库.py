@@ -13,16 +13,32 @@ html_doc = """
 """
 
 from bs4 import BeautifulSoup
-soup = BeautifulSoup(html_doc, 'html.parser') #html.parser 表示解析文档时所用的解析器；此处的解析器也可以是 'lxml' 或者 'html5lib'
+soup1 = BeautifulSoup(html_doc, 'html.parser') #html.parser 表示解析文档时所用的解析器；此处的解析器也可以是 'lxml' 或者 'html5lib'
 # soup = BeautifulSoup(open('html_doc.html', encoding='utf8'), 'lxml')
 
 #prettify()用于格式化输出html/xml文档
-print(soup.prettify())
+# print(soup1.prettify())
 
 # BS4常用语法
 ## bs4将HTML文档转换成一个树形结构，该结构有利于快速地遍历和搜索HTML文档
 
-
+# 1、Tag节点
+soup2 = BeautifulSoup('<p class="Web site url"><b>c.biancheng.net</b></p>', 'html.parser')
+#获取整个p标签的html代码
+print(soup2.p)
+#获取b标签
+print(soup2.p.b)
+#获取p标签内容，使用NavigableString类中的string、text、get_text()
+print(soup2.p.text)
+#返回一个字典，里面是多有属性和值
+print(soup2.p.attrs)
+#查看返回的数据类型
+print(type(soup2.p))
+#根据属性，获取标签的属性值，返回值为列表
+print(soup2.p['class'])
+#给class属性赋值,此时属性值由列表转换为字符串
+soup2.p['class']=['Web','Site']
+print(soup2.p)
 
 
 
