@@ -40,6 +40,28 @@ print(soup2.p['class'])
 soup2.p['class']=['Web','Site']
 print(soup2.p)
 
+# 2、遍历节点
+
+# 3、find_all()与find()是解析HTML文档的常用方法，可以在HTML文档中按照一定的条件（相当于过滤器）查找所需内容
+## find_all();  find_all( name , attrs , recursive , text , limit )
+html_doc3 = """
+<html><head><title>"c语言中文网"</title></head>
+<body>
+<p class="title"><b>c.biancheng.net</b></p>
+<p class="website">一个学习编程的网站</p>
+<a href="http://c.biancheng.net/python/" id="link1">python教程</a>
+<a href="http://c.biancheng.net/c/" id="link2">c语言教程</a>
+<a href="http://c.biancheng.net/django/" id="link3">django教程</a>
+<p class="vip">加入我们阅读所有教程</p>
+<a href="http://vip.biancheng.net/?from=index" id="link4">成为vip</a>
+"""
+#创建soup解析对象
+soup3 = BeautifulSoup(html_doc3, 'html.parser')
+#查找所有a标签并返回
+print(soup3.find_all("a"))
+#查找前两条a标签并返回
+print(soup3.find_all("a",limit=2))
+#只返回两条a标签
 
 
 
