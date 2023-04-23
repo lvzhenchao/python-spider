@@ -44,6 +44,7 @@ print(soup2.p)
 
 # 3、find_all()与find()是解析HTML文档的常用方法，可以在HTML文档中按照一定的条件（相当于过滤器）查找所需内容
 ## find_all();  find_all( name , attrs , recursive , text , limit )
+### 简化代码：soup.find_all("a") == soup("a")
 html_doc3 = """
 <html><head><title>"c语言中文网"</title></head>
 <body>
@@ -62,6 +63,46 @@ print(soup3.find_all("a"))
 #查找前两条a标签并返回
 print(soup3.find_all("a",limit=2))
 #只返回两条a标签
+
+## find()方法类似，但是仅返回一个符合条件的结果，所以方法没有limit参数
+
+# 4、CSS选择器：BS4支持大部分的 CSS 选择器，比如常见的标签选择器、类选择器、id 选择器，以及层级选择器
+## select() 方法，通过向该方法中添加选择器
+html_doc4 = """
+<html><head><title>"c语言中文网"</title></head>
+<body>
+<p class="title"><b>c.biancheng.net</b></p>
+<p class="website">一个学习编程的网站</p>
+<a href="http://c.biancheng.net/python/" id="link1">python教程</a>
+<a href="http://c.biancheng.net/c/" id="link2">c语言教程</a>
+<a href="http://c.biancheng.net/django/" id="link3">django教程</a>
+<p class="vip">加入我们阅读所有教程</p>
+<a href="http://vip.biancheng.net/?from=index" id="link4">成为vip</a>
+<p class="introduce">介绍:
+<a href="http://c.biancheng.net/view/8066.html" id="link5">关于网站</a>
+<a href="http://c.biancheng.net/view/8092.html" id="link6">关于站长</a>
+</p>
+"""
+soup = BeautifulSoup(html_doc4, 'html.parser')
+print("-----------------")
+#根据元素标签查找
+print(soup.select('title'))
+#根据属性选择器查找
+print(soup.select('a[href]'))
+#根据类查找
+print(soup.select('.vip'))
+#后代节点查找
+print(soup.select('html head title'))
+#查找兄弟节点
+print(soup.select('p + a'))
+#根据id选择p标签的兄弟节点
+print(soup.select('p ~ #link3'))
+#nth-of-type(n)选择器，用于匹配同类型中的第n个同级兄弟元素
+print(soup.select('p ~ a:nth-of-type(1)'))
+#查找子节点
+print(soup.select('p > a'))
+print(soup.select('.introduce > #link5'))
+
 
 
 
