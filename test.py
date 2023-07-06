@@ -1,3 +1,4 @@
+import sys
 try:
     a = input("输入一个数：")
     #判断用户输入的是否为数字
@@ -8,3 +9,7 @@ except Exception as e:
     print(e.args)
     print(str(e))
     print(repr(e))
+    print(sys.exc_info())
+    print(sys.exc_info()[0])
+    print(sys.exc_info()[1])
+    print(sys.exc_info()[2])
