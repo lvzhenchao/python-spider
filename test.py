@@ -1,15 +1,16 @@
-import sys
-try:
-    a = input("输入一个数：")
-    #判断用户输入的是否为数字
-    if(not a.isdigit()):
-        raise ValueError("a 必须是数字")
-except Exception as e:
-    # 访问异常的错误编号和详细信息
-    print(e.args)
-    print(str(e))
-    print(repr(e))
-    print(sys.exc_info())
-    print(sys.exc_info()[0])
-    print(sys.exc_info()[1])
-    print(sys.exc_info()[2])
+import logging
+logging.basicConfig(filename='demo.txt',level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+
+logging.debug('Start of program')
+def factorial(n):
+    logging.debug('Start of factorial(%s%%)' % (n))
+    total = 1
+    for i in range(n + 1):
+        total *= i
+        logging.debug('i is ' + str(i) + ', total is ' + str(total))
+    logging.debug('End of factorial(%s%%)' % (n))
+    return total
+
+print(factorial(5))
+
+logging.debug('End of program')
